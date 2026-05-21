@@ -1,7 +1,6 @@
-yaml
+
 ---
-layout: default
-title: ¡Bienvenidos a mi Portafolio de Analisis de Datos!
+
 ---
 ---
 
@@ -18,3 +17,5 @@ Mi enfoque no se limita a gestionar tareas; se trata de orquestar flujos de trab
 ### Habilidades Blandas
 
 Análisis de datos | Resolución de problemas | Comunicación efectiva | Orientación a resultados | Atención al detalle
+
+[Ir a Linkedin](www.linkedin.com/in/michelequere)
