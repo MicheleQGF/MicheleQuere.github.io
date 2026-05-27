@@ -60,21 +60,21 @@ Python | Pandas | Tableau
 
 Gráfico de líneas para visualizar la evolución del SPI y CPI durante la duración del proyecto
 
-![CPISPI (2).png](attachment:df5fb3e8-4509-47fc-b946-8a2b37c543c2:CPISPI_(2).png)
+![CPISPI (2).png](assets/CPISPI_(2).png)
 
 Burndown para revisar el número de story points completados por año (con granularidad dinámica para filtrar por año
 
-![Burndown.png](attachment:42fa42e5-57f3-4b41-b904-b8e8d8fa6511:Burndown.png)
+![Burndown.png](assets/Burndown.png)
 
 Diagramas de Pareto y de Barras para visualizar el esfuerzo total en horas por tipo de ticket y el crecimiento del equipo por año
 
-![Pareto.png](attachment:28a97b7b-51e5-45be-a207-f6fa3bc99d64:Pareto.png)
+![Pareto.png](assets/Pareto.png)
 
-![Team.png](attachment:4114b2dd-550d-4c5d-9f61-6b8cbf7448d7:Team.png)
+![Team.png](assets/Team.png)
 
 Link a Tableau Public:
 
-https://public.tableau.com/views/DashboardLsst/Overview?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+[https://public.tableau.com/views/DashboardLsst/Overview?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/views/DashboardLsst/Overview?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 Ver el repositorio completo:
 
@@ -131,17 +131,17 @@ Python | Pandas | SQL | Tableau
 
 Visualización diseñada para auditar la productividad del capital. El gráfico demuestra la sobredimensión del gasto en México (focalizado en *Social* y *Paid Search*) frente a un retorno de facturación que no justifica dicha proporcionalidad respecto a Argentina. Sirve como evidencia analítica irreversible para dar cumplimiento a la directriz de optimización: contraer el presupuesto ineficiente e inyectar liquidez en la plaza de mayor rendimiento.
 
-![Treemap.png](attachment:b61480a8-ff72-476b-8794-2b7ba9e51cea:Treemap.png)
+![Treemap.png](assets/Treemap.png)
 
 Módulo analítico diseñado para evaluar la salud de la mezcla de productos. Los datos demuestran que el volumen de facturación actual es frágil: el 87% de los ingresos está concentrado en la categoría de Electrónica, la cual está severamente impactada por el bajo margen operativo de su producto principal, la *Laptop-Gaming* (6.8%). Esta sección sirve como evidencia analítica irreversible para sustentar un viraje comercial: es prioritario desacelerar la dependencia de la línea líder y diseñar campañas de posicionamiento para los productos de Hogar y Moda que ofrecen retornos superiores al 90% sobre el costo.
 
-![Barras.png](attachment:dd923509-2805-4e0c-9b13-d26ad5eb9f49:Barras.png)
+![Barras.png](assets/Barras.png)
 
-![Tabla.png](attachment:7e180d85-6526-4bf0-b417-8ec90b98bec6:Tabla.png)
+![Tabla.png](assets/Tabla.png)
 
 link a Tableau Public:
 
-https://public.tableau.com/views/Sprint12_ProyectoFinal/DashboardOverview?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+[https://public.tableau.com/views/Sprint12_ProyectoFinal/DashboardOverview?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/views/Sprint12_ProyectoFinal/DashboardOverview?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ver repositorio completo:
 
@@ -215,30 +215,30 @@ el primer periodo y como hipótesis, el volumen masivo de transacciones de depar
 
 Presento los dashboards con sus drill through
 
-![2026-05-27 10_39_55-Proyecto10_MicheleQuere.png](attachment:060c6469-691c-4167-a371-96be4ff7a087:2026-05-27_10_39_55-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_39_55-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_39_55-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_40_41-Proyecto10_MicheleQuere.png](attachment:cf0b20be-bd21-4271-af27-38a8d49af314:2026-05-27_10_40_41-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_40_41-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_40_41-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_55_43-Proyecto10_MicheleQuere.png](attachment:d5f35bd9-6060-4bfa-a17d-da4caad4537d:2026-05-27_10_55_43-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_55_43-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_55_43-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_56_14-Proyecto10_MicheleQuere.png](attachment:4efb69dd-22eb-4e6b-9d27-b3b2ba737aaa:2026-05-27_10_56_14-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_56_14-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_56_14-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_41_21-Proyecto10_MicheleQuere.png](attachment:743716eb-ac01-4090-a687-219122d1f034:2026-05-27_10_41_21-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_41_21-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_41_21-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_41_46-Proyecto10_MicheleQuere.png](attachment:17ba3a46-d208-425a-b6a4-9a3d73cd146d:2026-05-27_10_41_46-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_41_46-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_41_46-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_42_25-Proyecto10_MicheleQuere.png](attachment:6bf6fe90-826e-4dbb-be43-22990db120e4:2026-05-27_10_42_25-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_42_25-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_42_25-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_42_46-Proyecto10_MicheleQuere.png](attachment:537fd3e6-504c-4cf5-8a79-0b88214ea59c:2026-05-27_10_42_46-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_42_46-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_42_46-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_43_32-Proyecto10_MicheleQuere.png](attachment:d26708b0-e701-47be-a8c5-c4f72d7931fe:2026-05-27_10_43_32-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_43_32-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_43_32-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_43_50-Proyecto10_MicheleQuere.png](attachment:27c5f132-01d6-4a30-aed6-0994b1576960:2026-05-27_10_43_50-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_43_50-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_43_50-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_44_05-Proyecto10_MicheleQuere.png](attachment:467047bf-ff0c-48d0-9ba9-9d2da0a6de01:2026-05-27_10_44_05-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_44_05-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_44_05-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_44_57-Proyecto10_MicheleQuere.png](attachment:eb19e142-50de-4dba-a0b1-acb2fcdb3c55:2026-05-27_10_44_57-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_44_57-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_44_57-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_45_19-Proyecto10_MicheleQuere.png](attachment:ca6b8214-da91-4b5e-9bd3-83d006443113:2026-05-27_10_45_19-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_45_19-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_45_19-Proyecto10_MicheleQuere.png)
 
-![2026-05-27 10_45_34-Proyecto10_MicheleQuere.png](attachment:f4ac0d76-f3d7-4823-9841-a1cc25e1e06a:2026-05-27_10_45_34-Proyecto10_MicheleQuere.png)
+![2026-05-27 10_45_34-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_45_34-Proyecto10_MicheleQuere.png)
