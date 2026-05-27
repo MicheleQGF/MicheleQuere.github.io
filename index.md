@@ -242,3 +242,4 @@ Presento los dashboards con sus drill through
 ![2026-05-27 10_45_19-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_45_19-Proyecto10_MicheleQuere.png)
 
 ![2026-05-27 10_45_34-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_45_34-Proyecto10_MicheleQuere.png)
+
