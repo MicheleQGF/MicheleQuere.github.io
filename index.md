@@ -1,14 +1,9 @@
-
----
-
----
----
-
-# ACERCA DE MÍ
+## ACERCA DE MÍ
 Project Manager con una certificación de Data Analyst en progreso.
 Mi enfoque no se limita a gestionar tareas; se trata de orquestar flujos de trabajo donde los datos dictan la estrategia y la tecnología potencia la experiencia.
 
-[quere.michele@gmail.com](mailto:quere.michele@gmail.com) | +52 55 5072 8230 | [www.linkedin.com/in/michelequere](http://www.linkedin.com/in/michelequere) | México, CDMX
+[quere.michele@gmail.com](mailto:quere.michele@gmail.com) | +52 55 5072 8230 | 
+[www.linkedin.com/in/michelequere](http://www.linkedin.com/in/michelequere) | México, CDMX
 
 ### Habilidades tecnológicas
 
@@ -19,7 +14,6 @@ Mi enfoque no se limita a gestionar tareas; se trata de orquestar flujos de trab
 
 Análisis de datos | Resolución de problemas | Comunicación efectiva | Orientación a resultados | Atención al detalle
 
-[Ir a Linkedin](http://www.linkedin.com/in/michelequere) 
 
 ## Análisis de Desempeño Operativo en el proyecto Lsstcorp Data Management
 
@@ -74,9 +68,11 @@ Diagramas de Pareto y de Barras para visualizar el esfuerzo total en horas por t
 
 Link a Tableau Public:
 
-[https://public.tableau.com/views/DashboardLsst/Overview?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/views/DashboardLsst/Overview?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[repositorio Tableau lsstcorp DM](https://public.tableau.com/views/DashboardLsst/Overview?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 Ver el repositorio completo:
+[repositorio completo lsstcorp DM](https://github.com/MicheleQGF/lsstcorp_DM-TAWOS_test)
+
 
 ## Proyecto RappiPlus
 
@@ -141,9 +137,10 @@ Módulo analítico diseñado para evaluar la salud de la mezcla de productos. Lo
 
 link a Tableau Public:
 
-[https://public.tableau.com/views/Sprint12_ProyectoFinal/DashboardOverview?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/views/Sprint12_ProyectoFinal/DashboardOverview?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[Repositorio Tableau Rappiplus](https://public.tableau.com/views/Sprint12_ProyectoFinal/DashboardOverview?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ver repositorio completo:
+[repositorio completo Rappiplus](https://github.com/MicheleQGF/ProyectoRappiPlus)
 
 ## **Estrategia comercial de Andes Capital Real Estate**
 
