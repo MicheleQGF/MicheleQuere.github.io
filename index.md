@@ -7,17 +7,22 @@ Mi enfoque no se limita a gestionar tareas; se trata de orquestar flujos de trab
 
 ### Habilidades tecnológicas
 
-- Análisis y gestión de Datos utilizando Google Sheets | SQL | Python
-- Visualización de Datos usando Matplotlib |Seaborn | Tableau | PowerBI
+- Análisis y gestión de Datos utilizando:
+Google Sheets | SQL | Python
+- Visualización de Datos usando:
+Matplotlib |Seaborn | Tableau | PowerBI
 
 ### Habilidades Blandas
 
 Análisis de datos | Resolución de problemas | Comunicación efectiva | Orientación a resultados | Atención al detalle
 
+---
+
+## Proyectos
 
 ## Análisis de Desempeño Operativo en el proyecto Lsstcorp Data Management
 
-Tomamos el dataset tawos_test_clean.csv descargable aquí : https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download para escojer uno de los proyectos documentados y hacer un análisis de rendimiento del proyecto elegido: Lsstcorp Data Management de 2014 a 2020.
+Tomamos el dataset **tawos_test_clean.csv** descargable aquí : [https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download](https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download) para escojer uno de los proyectos documentados y hacer un análisis de rendimiento del proyecto elegido: Lsstcorp Data Management de 2014 a 2020. La tabla final contiene registros de Jira de dicho proyecto.
 
 ### Herramientas
 
@@ -64,13 +69,15 @@ Diagramas de Pareto y de Barras para visualizar el esfuerzo total en horas por t
 
 ![paretoTeam.png](assets/paretoTeam.png)
 
-Link a Tableau Public:
+Ver en Tableau Public:
 
 [repositorio Tableau lsstcorp DM](https://public.tableau.com/views/DashboardLsst/Overview?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-Ver el repositorio completo:
+Ver el repositorio completo en github:
+
 [repositorio completo lsstcorp DM](https://github.com/MicheleQGF/lsstcorp_DM-TAWOS_test)
 
+---
 
 ## Proyecto RappiPlus
 
@@ -140,17 +147,14 @@ link a Tableau Public:
 ver repositorio completo:
 [repositorio completo Rappiplus](https://github.com/MicheleQGF/ProyectoRappiPlus)
 
+---
+
 ## **Estrategia comercial de Andes Capital Real Estate**
 
 La empresa gestiona la venta de diferentes tipos de propiedades a través de distintos canales de venta y segmentos de clientes. La información existe a nivel transaccional, pero el cliente busca una visión analítica clara del negocio. Se crea un dashboard interactivo en Power BI para lograrlo con los datasets siguientes:
-
-hecho_ventas_propiedades.csv
-
-dim_clientes.csv
-
-dim_propiedades.csv
-
-dim_fecha.csv
+**hecho_ventas_propiedades.csv**: tabla de hechos con información de ventas
+**dim_clientes.csv**: tabla con información de segmentación por cliente
+**dim_propiedades.csv**: tabla con información sobre tipo de propiedades, categoría, tamaño y número de habitaciones
 
 #### Herramientas
 
@@ -208,33 +212,5 @@ el primer periodo y como hipótesis, el volumen masivo de transacciones de depar
 
 #### Visualizaciones
 
-Presento los dashboards con sus drill through
-
-![2026-05-27 10_39_55-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_39_55-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_40_41-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_40_41-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_55_43-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_55_43-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_56_14-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_56_14-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_41_21-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_41_21-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_41_46-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_41_46-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_42_25-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_42_25-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_42_46-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_42_46-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_43_32-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_43_32-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_43_50-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_43_50-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_44_05-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_44_05-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_44_57-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_44_57-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_45_19-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_45_19-Proyecto10_MicheleQuere.png)
-
-![2026-05-27 10_45_34-Proyecto10_MicheleQuere.png](assets/2026-05-27_10_45_34-Proyecto10_MicheleQuere.png)
-
+A continuación un video demostrativo del dashboard interactivo creado en PowerBI:
+<video src="assets/AndesCapVideo-1.mp4" controls width="100%" poster="assets/2026-05-27 10_39_55-Proyecto10_MicheleQuere.png"></video>
