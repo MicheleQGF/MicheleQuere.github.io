@@ -2,3 +2,5 @@ theme: jekyll-theme-minimal
 title: Michèle Quéré's Portfolio
 description: Bienvenidos a mi Portafolio de Análisis de Datos
 logo: "assets/Mich25a.jpg"
+title_color: "#C98B73"
+link_color: "#C98B73"
