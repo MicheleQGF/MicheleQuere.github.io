@@ -54,7 +54,7 @@ Python | Pandas | Tableau
 
 Gráfico de líneas para visualizar la evolución del SPI y CPI durante la duración del proyecto
 
-![CPISPI (2).png](assets/CPISPI_(2).png)
+![CPISPI.png](assets/CPISPI.png)
 
 Burndown para revisar el número de story points completados por año (con granularidad dinámica para filtrar por año
 
