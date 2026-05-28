@@ -213,4 +213,4 @@ el primer periodo y como hipótesis, el volumen masivo de transacciones de depar
 #### Visualizaciones
 
 A continuación un video demostrativo del dashboard interactivo creado en PowerBI:
-<video src="assets/AndesCapVideo-1.1.mp4" controls width="100%" poster="assets/2026-05-27 10_39_55-Proyecto10_MicheleQuere.png"></video>
+<video src="assets/AndesCapVideo-a.mp4" controls width="100%" poster="assets/2026-05-27 10_39_55-Proyecto10_MicheleQuere.png"></video>
