@@ -178,7 +178,7 @@ Power BI
 - ¿El negocio está **creciendo año contra año**?
 - ¿Los clientes **vuelven a comprar después de su primera compra**?
 
-**Hallazgos clave**
+### Hallazgos clave
 
 - El ingreso total del periodo 2023-2024 fue de 6,012.5 Millones generado por 8500 ventas.
 - El tipo de propiedad que genera mayores ingresos son las casas, 1,147 Millones en 2024
@@ -204,7 +204,7 @@ el primer periodo y como hipótesis, el volumen masivo de transacciones de depar
 - Las ventas muestran un crecimiento de 11.1% YoY. Aunque ese crecimiento se va ralentizando puesto que la línea de tendencia del MoM va a la baja.
 - La retención de clientes aparece más en el Canal Directo. También existe retención en los clientes inversionistas que compran casas y propiedades de índole comercial. Es decir se ve retención de clientes en propiedades de valor Alto.
 
-**Recomendaciones estratégicas**
+### Recomendaciones estratégicas
 
 - Se sugiere **Mantener la Escala en el canal de Corredor:** Es el motor de alta rotación. Se usa para vaciar rápido el inventario estándar y mantener el flujo de caja constante, este sería continuar con la captación de departamentos de menos de 100 m2 de 2 y 3 recámaras de primera vez.  Así mismo, hay que **Impulsar la Rentabilidad en el canal directo:** Es el canal exclusivo para el "Programa Premium". Al no pagar comisiones externas, protege el margen del 3% y captura tickets más altos libres de competencia masiva.
 - El segundo escenario interesante son las unidades de más de 200m², están libres de la competencia del comprador masivo de "Primera vez", siendo un territorio exclusivo para Inversionistas, el cual creció $128 millones y con un ticket promedio mayor, sobre todo las de tipo Comercial. Se necesita una diversificación dinámica del portafolio para captar este tipo de propiedades e incrementar la cartera de este tipo de compradores.
