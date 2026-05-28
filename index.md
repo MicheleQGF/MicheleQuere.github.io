@@ -157,11 +157,11 @@ La empresa gestiona la venta de diferentes tipos de propiedades a través de dis
 **dim_clientes.csv**: tabla con información de segmentación por cliente
 **dim_propiedades.csv**: tabla con información sobre tipo de propiedades, categoría, tamaño y número de habitaciones
 
-#### Herramientas
+### Herramientas
 
 Power BI
 
-#### Metodología
+### Metodología
 
 - Con ayuda de Power Query checamos duplicados y valores nulos. Se estandarizaron los tipos de datos.
 - Se creó una tabla dim_fecha para poder crear medidas de inteligencia de tiempo
@@ -169,7 +169,7 @@ Power BI
 - Se crean medidas con contexto de filtro y medidas para análisis de cohortes.
 - Se realizan Dashboard de Overview, Análisis Comercial, Detalle Canal de Venta, Detalle Tipo de Propiedad, Detalle Segmento Comprador, Tamaño y Número de habitaciones, Cohorte Mes Venta y Cohorte Retención
 
-#### Preguntas Clave:
+### Preguntas Clave:
 
 - ¿Cuál es el **ingreso total** generado por las ventas de propiedades?
 - ¿Qué **tipo de propiedad genera más ingresos**?
@@ -211,7 +211,7 @@ el primer periodo y como hipótesis, el volumen masivo de transacciones de depar
 - Implementar un Programa de Lealtad Premium, es decir un esquema de beneficios para "Inversionistas Frecuentes" basado en el comportamiento observado en las cohortes que compran propiedades menores a los 100 m2, incentivando la compra de la segunda y tercera unidad. Este plan también buscaría incentivar cohortes más recientes (2024) a regresar a comprar.
 - Este programa de Lealtad Premium podría ofrecerse más agresivamente durante verano e invierno con vistas a estabilizar el decrecimiento estacional durante estas épocas del año.
 
-#### Visualizaciones
+### Visualizaciones
 
 A continuación un video demostrativo del dashboard interactivo creado en PowerBI:
 <video src="assets/Andescapvideo.mp4" controls width="100%" poster="assets/2026-05-27 10_39_55-Proyecto10_MicheleQuere.png"></video>
