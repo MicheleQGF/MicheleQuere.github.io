@@ -145,11 +145,12 @@ link a Tableau Public:
 [Repositorio Tableau Rappiplus](https://public.tableau.com/views/Sprint12_ProyectoFinal/DashboardOverview?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ver repositorio completo:
+
 [repositorio completo Rappiplus](https://github.com/MicheleQGF/ProyectoRappiPlus)
 
 ---
 
-## **Estrategia comercial de Andes Capital Real Estate**
+## Estrategia comercial de Andes Capital Real Estate
 
 La empresa gestiona la venta de diferentes tipos de propiedades a través de distintos canales de venta y segmentos de clientes. La información existe a nivel transaccional, pero el cliente busca una visión analítica clara del negocio. Se crea un dashboard interactivo en Power BI para lograrlo con los datasets siguientes:
 **hecho_ventas_propiedades.csv**: tabla de hechos con información de ventas
