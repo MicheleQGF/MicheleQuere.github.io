@@ -1,0 +1,25 @@
+---
+---
+@import "{{ site.theme }}";
+
+// 1. Cambiar el color de los títulos principales y el nombre del portafolio
+h1, h2, h3, .project-name {
+  color: #C98B73 !important;
+}
+
+// 2. Cambiar el color de todos los enlaces (LinkedIn, Correo, etc.)
+a {
+  color: #C98B73 !important;
+  text-decoration: none; // Quita la línea de subrayado si no te gusta
+}
+
+// 3. Cambiar el color del enlace cuando pasas el cursor por encima (efecto Hover)
+a:hover {
+  color: #C98B73 !important;
+  text-decoration: underline; // Se subraya al pasar el cursor
+}
+
+// 4. Cambiar el color del texto del botón de GitHub (el que salía azul)
+.view, .bold {
+  color: #C98B73 !important;
+}
