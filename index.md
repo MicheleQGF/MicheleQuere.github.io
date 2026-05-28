@@ -62,9 +62,7 @@ Burndown para revisar el número de story points completados por año (con granu
 
 Diagramas de Pareto y de Barras para visualizar el esfuerzo total en horas por tipo de ticket y el crecimiento del equipo por año
 
-![Pareto.png](assets/Pareto.png)
-
-![Team.png](assets/Team.png)
+![paretoTeam.png](assets/paretoTeam.png)
 
 Link a Tableau Public:
 
