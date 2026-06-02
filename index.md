@@ -1,4 +1,4 @@
-[English Version](MicheleQuere.github.io/en/)
+[English Version](/en/)
 
 ## ACERCA DE MÍ
 Project Manager con una certificación de Data Analyst en progreso.
