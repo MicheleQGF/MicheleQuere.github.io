@@ -1,3 +1,5 @@
+[English Version](/en/)
+
 ## ACERCA DE MÍ
 Project Manager con una certificación de Data Analyst en progreso.
 Mi enfoque no se limita a gestionar tareas; se trata de orquestar flujos de trabajo donde los datos dictan la estrategia y la tecnología potencia la experiencia.
