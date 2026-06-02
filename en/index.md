@@ -1,4 +1,4 @@
-[Versión en Español](/)
+[Versión en Español](MicheleQuere.github.io/)
 
 ## ABOUT ME
 Project Manager with a Data Analyst certification in progress.
