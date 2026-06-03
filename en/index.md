@@ -61,15 +61,15 @@ Python | Pandas | Tableau
 
 Line chart to visualize the evolution of SPI and CPI over the duration of the project
 
-![CPISPI.png](/assets/CPISPI.png)
+![CPISPI.png](/MicheleQuere.github.io/assets/CPISPI.png)
 
 Burndown to review the number of story points completed per year (with dynamic granularity to filter by year)
 
-![Burndown.png](/assets/Burndown.png)
+![Burndown.png](/MicheleQuere.github.io/assets/Burndown.png)
 
 Pareto and Bar charts to visualize the total effort in hours by ticket type and team growth per year
 
-![paretoTeam.png](/assets/paretoTeam.png)
+![paretoTeam.png](/MicheleQuere.github.io/assets/paretoTeam.png)
 
 View on Tableau Public:
 
@@ -134,13 +134,13 @@ Python | Pandas | SQL | Tableau
 
 Visualization designed to audit capital productivity. The chart demonstrates the disproportionate spend in Mexico (focused on *Social* and *Paid Search*) compared to a billing return that does not justify such proportionality relative to Argentina. It serves as irreversible analytical evidence to comply with the optimization directive: contract the inefficient budget and inject liquidity into the highest-yielding location.
 
-![Treemap.png](/assets/Treemap.png)
+![Treemap.png](/MicheleQuere.github.io/assets/Treemap.png)
 
 Analytical module designed to evaluate the health of the product mix. The data demonstrates that the current billing volume is fragile: 87% of revenue is concentrated in the Electronics category, which is severely impacted by the low operating margin of its main product, the *Laptop-Gaming* (6.8%). This section serves as irreversible analytical evidence to support a commercial shift: it is a priority to decelerate dependency on the leading line and design positioning campaigns for Home and Fashion products that offer returns exceeding 90% over cost.
 
-![Barras.png](/assets/Barras.png)
+![Barras.png](/MicheleQuere.github.io/assets/Barras.png)
 
-![Tabla.png](/assets/Tabla.png)
+![Tabla.png](/MicheleQuere.github.io/assets/Tabla.png)
 
 Link to Tableau Public:
 
@@ -215,4 +215,4 @@ Power BI
 ### Visualizations
 
 Below is a demonstration video of the interactive dashboard created in PowerBI:
-<video src="/assets/Andescapvideo.mp4" controls width="100%" poster="assets/2026-05-27 10_39_55-Proyecto10_MicheleQuere.png"></video>
+<video src="/MicheleQuere.github.io/assets/Andescapvideo.mp4" controls width="100%" poster="assets/2026-05-27 10_39_55-Proyecto10_MicheleQuere.png"></video>
