@@ -1,7 +1,7 @@
 [English Version](/MicheleQuere.github.io/en/)
 
 ## ACERCA DE MÍ
-Project Manager con una certificación de Data Analyst en progreso.
+Project Manager con una certificación de Data Analyst.
 Mi enfoque no se limita a gestionar tareas; se trata de orquestar flujos de trabajo donde los datos dictan la estrategia y la tecnología potencia la experiencia.
 
 [quere.michele@gmail.com](mailto:quere.michele@gmail.com) | +52 55 5072 8230 | 
