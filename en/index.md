@@ -22,9 +22,56 @@ Data analysis | Problem solving | Effective communication | Results orientation 
 
 ## Projects
 
+## Resource Allocation and Budget Analysis in Three TAWOS Projects
+
+Took the TAWOS Jira dataset, downloadable here: https://github.com/SOLAR-group/TAWOS, and chose three of its documented projects (Mule, Titanium Mobile Platform and Appcelerator Studio, 20,854 issues from 2004 to 2020) to analyze how the seniority mix of a team relates to what it delivers, what it costs and how often work comes back. TAWOS has no job roles, pay or budgets, so added a clearly labeled synthetic layer: the Enterprise HRA Allocation Dataset (https://www.kaggle.com/datasets/ziya07/enterprise-human-resource-allocation-dataset), matched to the real contributors by seniority tier. The final table has one row per Jira issue, plus sprint, budget and monthly cost tables.
+
+### Tools
+
+Python | Pandas | SciPy | Simpful (fuzzy logic) | MySQL in Docker | SQLAlchemy | Tableau
+
+### Key Questions
+
+    Which of the three projects performed best, and on which measures?
+    Does a higher Senior share raise output linearly, or does composition matter more?
+    When did each project cross its budget, and how did its pace change?
+    How concentrated is the effort in a few people, and how fragile is that?
+    Is there a Senior review bottleneck, and why does work finish late?
+
+### Methodology
+
+Data was loaded into MySQL 8.0 (Docker), explored table by table and standardized (dates, labels, one tier vocabulary). Story-point history was rebuilt from the change log, because TAWOS's own "changed after estimation" flag caught only about 17% of the real revisions.
+Nulls: we decided to keep every null and never drop rows silently. Each one got an explicit decision. 57.5% of issues have no story points. They are mostly reactive bug work and carry 51.8% of the effort, so they stay in cost but not in earned value (no planned hours, no imputed points). The 1,636 open issues have no resolution date, so they are left out of the monthly series and year charts, but their cost stays in the project totals. Issues without a sprint (14,673) or without sprint dates (277) are excluded only from sprint-based measures (EVM, lateness), with the coverage reported next to each result. 1,867 issues (9%, almost all in Mule) have no assignee: the previous owner was recovered from the change log for 263, and the rest were kept as their own category and priced at the core-team median rate. A tier is never imputed: the 1,959 issues without a tiered owner are labeled "No tier (assumed rate)". Only columns that were empty or unreliable (for example Pull_Request_URL, 100% empty) were dropped.
+Seniority tiers (Junior to Senior) were computed from real activity (tenure, issue volume, story points, share of high-priority work) and cut at percentiles of the core team (97 people). They are relative, not years of experience.
+The 5,000 synthetic HR profiles were reduced to 902 tech employees and scored with a fuzzy system (81 rules, Mamdani). Each of the 182 scored contributors received one employee of the same tier (seed 42), which gave the hourly rate. Conclusions hold at tier level only.
+Outliers in the real TAWOS effort: 509 tickets (70 in Appcelerator, 257 in Mule, 182 in Titanium) have more than 30 days of recorded effort. They are only 1% to 6% of each project's issues but hold 51%, 69% and 80% of resolved cost, and two of the three largest were closed without a fix (Won't Do, Won't Fix), so the field behaves like elapsed time, not hours worked: for these tickets effort is a median of 79% of the ticket's whole life (9% for the rest), it correlates 0.39 with how long a ticket stayed open and about 0 with comments or reassignments. We first decided to keep them as the best available proxy, and changed the decision once this evidence appeared. They were capped at 720 h (30 days) per ticket, which touches exactly the flagged tickets. Two alternatives were compared and rejected: a cap at the 99th percentile of ordinary tickets (602 h) cut 81 more tickets, and 160 h would have cut 2,001, including many ordinary ones. Nothing was deleted: raw values stay in the dataset, capped versions live in separate columns, and every outlier is flagged. The cap lowers resolved cost from $90.4M to $40.6M, and the total capped cost is about $41.0M. The cap is a ceiling, not a correction: capped tickets still count 720 h each (about a third of the capped total), so their true effort is unknown. Issues closed without delivery (Won't Fix, Duplicate, Cannot Reproduce and similar, 10% to 14% of story points) leave the scope on their closing date and earn no value, but their hours stay in cost. Budgets are simulated (Mule 120% of cost, Titanium 85%, Appcelerator a fixed annual amount), so budget outcomes are by design, not findings. What carries information is the path.
+EVM was built per sprint with scope rebuilt from the change log. PV is a straight line over time, because the data has no planned dates. Lateness uses 24% of the issues and planned vs actual hours 28%.
+Five dashboards were created in Tableau. For bus factor and mentorship, Python is the source of truth.
+
+### Conclusions and Recommendations
+
+**Findings**
+
+    No project wins on every measure. Mule held its cost efficiency (CPI 0.97) and has the broadest contributor base (23 people for 80% of the hours), but has the most late work (34% of delivered sprint issues resolved after the sprint ended). Titanium has the least rework (5.7% of resolved issues reopened) but crossed its budget in August 2018 and depends on five people for 80% of the hours. Appcelerator ended at CPI 0.43 with the most rework (25.5% reopened), also with five people for 80% of the hours.
+    Seniority does not act linearly. Across 238 sprints a straight line explains almost nothing (R² 0.018), and project context matters more than a raw Senior count. In Appcelerator more Seniors went with +32 points per head, in Mule with slightly lower output (−8) and in Titanium with no clear trend. Senior share averaged 74% in Appcelerator, 46% in Mule and 41% in Titanium.
+    The pace path says more than the final SPI. Appcelerator and Titanium started far ahead of an even-pace line (SPI 3.4 and 2.8) and converged to 1.0, while Mule started behind (0.7 and 0.6) and peaked at 1.4. An SPI above 1 does not mean ahead of schedule, because the plan is an even-pace line and scope kept growing after sprints started (+45% Appcelerator, +49% Mule, +35% Titanium).
+    Effort depends on very few people in two projects. Appcelerator's busiest person resolved 18% of the issues in 2011 and 90% in 2016. Titanium sat between 51% and 81% every year since 2012. Mule stayed between 10% and 29%.
+    There is no sign of a Senior review bottleneck (median review time 25.6 h for Junior-owned issues vs 25.1 h for Senior-owned, rank correlation −0.03), but the data does not say who reviewed. Mentoring capacity exists (3 to 6 mentors per sprint), but there is no evidence that any Junior was actually mentored.
+    Lateness rises over time for every tier. In Titanium it is explained by shorter sprints (from 11 to 13 days to 6 days in 2016, with late work jumping from 6–8% to 46–51%). In Mule it rose from 19% (2014) to 59% (2018) and stays unexplained by this data.
+
+**Recommendations:**
+
+    Record planned dates and milestones in the tracker. Without them SPI can only measure pace against an even-pace line, and a rise in scope of 35% to 49% inside sprints cannot be separated from slow delivery. Milestones create checkpoints to review CPI and SPI before deviations become chronic.
+    Treat dependence on one or two people as a risk to manage. Appcelerator and Titanium needed only five people for 80% of the hours, and in Appcelerator one person resolved up to 90% of the issues in a year. Plan cross-training and review the bus factor each year.
+    Watch rework by project, not by tier. Rework differed far more between projects (25.5%, 9.8%, 5.7%) than between tiers, so quality gates for Appcelerator's bug-heavy backlog (58% bugs) should be the first place to look.
+    Track process changes next to performance. A change such as shorter sprints can look like a drop in performance. Log it so lateness and throughput are read in context.
+    Record who reviews and pairs with whom, and project context per issue. This is the data needed to test mentoring and review bottlenecks directly instead of through proxies.
+
+### Visualizations
+
 ## Operational Performance Analysis in the Lsstcorp Data Management Project
 
-We took the **tawos_test_clean.csv** dataset downloadable here: [https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download](https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download) to choose one of the documented projects and perform a performance analysis on the selected project: Lsstcorp Data Management from 2014 to 2020. The final table contains Jira records from that project.
+Took the **tawos_test_clean.csv** dataset downloadable here: [https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download](https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download) to choose one of the documented projects and perform a performance analysis on the selected project: Lsstcorp Data Management from 2014 to 2020. The final table contains Jira records from that project.
 
 ### Tools
 
