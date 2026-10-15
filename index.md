@@ -22,6 +22,75 @@ Análisis de datos | Resolución de problemas | Comunicación efectiva | Orienta
 
 ## Proyectos
 
+## Análisis de Asignación de Recursos y Presupuesto en Tres Proyectos de TAWOS
+
+Tomamos el dataset de Jira TAWOS, descargable aquí: https://github.com/SOLAR-group/TAWOS, y elegimos tres de sus proyectos documentados (Mule, Titanium Mobile Platform y Appcelerator Studio, 20,854 issues de 2004 a 2020) para analizar cómo se relaciona la mezcla de seniority de un equipo con lo que entrega, lo que cuesta y con qué frecuencia el trabajo regresa. TAWOS no tiene puestos, sueldos ni presupuestos, así que agregamos una capa sintética claramente identificada: el Enterprise HRA Allocation Dataset (https://www.kaggle.com/datasets/ziya07/enterprise-human-resource-allocation-dataset), asociado a los contribuyentes reales según su nivel de seniority. La tabla final tiene una fila por issue de Jira, además de tablas de sprints, presupuestos y costo mensual.
+
+### Herramientas
+
+Python | Pandas | SciPy | Simpful (lógica difusa) | MySQL en Docker | SQLAlchemy | Tableau
+
+### Preguntas clave
+
+- ¿Cuál de los tres proyectos tuvo el mejor desempeño y en qué medidas?
+- ¿Una mayor proporción de Seniors aumenta el rendimiento de forma lineal, o importa más la composición del equipo?
+- ¿Cuándo superó cada proyecto su presupuesto y cómo cambió su ritmo?
+- ¿Qué tan concentrado está el esfuerzo en pocas personas y qué tan frágil es eso?
+- ¿Existe un cuello de botella de revisión en los Seniors y por qué el trabajo termina tarde?
+
+### Metodología
+
+- Los datos se cargaron en MySQL 8.0 (Docker), se exploraron tabla por tabla y se estandarizaron (fechas, etiquetas, un solo vocabulario de niveles). El historial de story points se reconstruyó a partir del change log, porque la bandera propia de TAWOS "changed after estimation" detectó solo alrededor del 17% de las revisiones reales.
+- Nulos: decidimos conservar todos los nulos y nunca eliminar filas en silencio. Cada uno recibió una decisión explícita. El 57.5% de los issues no tiene story points. Son en su mayoría trabajo reactivo de bugs y concentran el 51.8% del esfuerzo, por lo que se quedan en el costo pero no en el valor ganado (sin horas planeadas y sin story points imputados). Los 1,636 issues abiertos no tienen fecha de resolución, así que se excluyen de la serie mensual y de las gráficas por año, pero su costo permanece en los totales del proyecto. Los issues sin sprint (14,673) o sin fechas de sprint (277) se excluyen solo de las medidas basadas en sprints (EVM, retrasos), y la cobertura se reporta junto a cada resultado. 1,867 issues (9%, casi todos en Mule) no tienen responsable: para 263 se recuperó el responsable anterior desde el change log, y el resto se conservó como categoría propia y se valuó con la tarifa mediana del equipo núcleo. Nunca se imputa un nivel: los 1,959 issues sin responsable con nivel se etiquetan "No tier (assumed rate)". Solo se eliminaron columnas vacías o poco confiables (por ejemplo, Pull_Request_URL, 100% vacía).
+- Los niveles de seniority (de Junior a Senior) se calcularon a partir de la actividad real (antigüedad, volumen de issues, story points, proporción de trabajo de alta prioridad) y se cortaron por percentiles del equipo núcleo (97 personas). Son relativos, no años de experiencia.
+- Los 5,000 perfiles sintéticos de RH se redujeron a 902 empleados de tecnología y se calificaron con un sistema difuso (81 reglas, Mamdani). Cada uno de los 182 contribuyentes calificados recibió un empleado del mismo nivel (semilla 42), lo que definió su tarifa por hora. Las conclusiones son válidas solo a nivel de nivel de seniority, no de persona.
+- Valores atípicos (outliers) en el esfuerzo real de TAWOS: 509 tickets (70 en Appcelerator, 257 en Mule, 182 en Titanium) tienen más de 30 días de esfuerzo registrado. Son solo entre el 1% y el 6% de los issues de cada proyecto, pero concentran el 51%, 69% y 80% del costo resuelto, y dos de los tres más grandes se cerraron sin corrección (Won't Do, Won't Fix). Por eso el campo se comporta como tiempo transcurrido y no como horas trabajadas: en estos tickets el esfuerzo es en mediana el 79% de toda la vida del ticket (9% en el resto), se correlaciona 0.39 con el tiempo que el ticket estuvo abierto y aproximadamente 0 con comentarios o reasignaciones. Primero decidimos conservarlos como la mejor aproximación disponible del esfuerzo, y cambiamos la decisión cuando apareció esta evidencia. Se limitaron a 720 h (30 días) por ticket, lo que afecta exactamente a los tickets marcados. Se compararon y descartaron dos alternativas: un tope en el percentil 99 de los tickets ordinarios (602 h) recortaba 81 tickets más, y 160 h habría recortado 2,001, incluidos muchos ordinarios. No se eliminó nada: los valores originales permanecen en el dataset, las versiones limitadas están en columnas separadas y cada outlier está marcado. El tope reduce el costo resuelto de $90.4 M a $40.6 M, y el costo total limitado es de alrededor de $41.0 M. El tope es un techo, no una corrección: los tickets limitados siguen contando 720 h cada uno (cerca de un tercio del total limitado), por lo que su esfuerzo real se desconoce. Los issues cerrados sin entrega (Won't Fix, Duplicate, Cannot Reproduce y similares, del 10% al 14% de los story points) salen del alcance en su fecha de cierre y no generan valor, pero sus horas permanecen en el costo. Los presupuestos son simulados (Mule 120% del costo, Titanium 85%, Appcelerator un monto anual fijo), por lo que los resultados de presupuesto son por diseño, no hallazgos. Lo que aporta información es la trayectoria.
+- El EVM se construyó por sprint, con el alcance reconstruido a partir del change log. El PV es una línea recta en el tiempo, porque los datos no tienen fechas planeadas. El análisis de retrasos usa el 24% de los issues y el de horas planeadas vs reales, el 28%.
+- Se crearon cinco dashboards en Tableau. Para el bus factor y la mentoría, Python es la fuente de verdad.
+
+### Conclusiones y Recomendaciones
+
+**Hallazgos**
+
+Ningún proyecto gana en todas las medidas. Mule mantuvo su eficiencia de costo (CPI 0.97) y tiene la base de contribuyentes más amplia (23 personas para el 80% de las horas), pero tiene más trabajo tardío (34% de los issues entregados en sprints se resolvieron después de que terminó el sprint). Titanium tiene el menor retrabajo (5.7% de los issues resueltos se reabrieron), pero superó su presupuesto en agosto de 2018 y depende de cinco personas para el 80% de las horas. Appcelerator terminó con un CPI de 0.43 y el mayor retrabajo (25.5% reabiertos), también con cinco personas para el 80% de las horas.
+
+El seniority no actúa de forma lineal. En 238 sprints, una línea recta casi no explica nada (R² 0.018), y el contexto del proyecto importa más que la simple cantidad de Seniors. En Appcelerator, más Seniors se asociaron con +32 puntos por persona; en Mule, con un rendimiento ligeramente menor (−8); y en Titanium, sin una tendencia clara. La proporción de Seniors promedió 74% en Appcelerator, 46% en Mule y 41% en Titanium.
+
+La trayectoria del ritmo dice más que el SPI final. Appcelerator y Titanium arrancaron muy por delante de una línea de ritmo constante (SPI 3.4 y 2.8) y convergieron a 1.0, mientras que Mule arrancó atrasado (0.7 y 0.6) y llegó a un máximo de 1.4. Un SPI mayor a 1 no significa ir adelantado, porque el plan es una línea de ritmo constante y el alcance siguió creciendo después de que iniciaron los sprints (+45% Appcelerator, +49% Mule, +35% Titanium).
+
+El esfuerzo depende de muy pocas personas en dos proyectos. La persona más ocupada de Appcelerator resolvió el 18% de los issues en 2011 y el 90% en 2016. Titanium estuvo entre 51% y 81% cada año desde 2012. Mule se mantuvo entre 10% y 29%.
+
+No hay señales de un cuello de botella de revisión en los Seniors (mediana de revisión de 25.6 h en issues de Juniors vs 25.1 h en los de Seniors, correlación de rangos −0.03), pero los datos no indican quién revisó. Existe capacidad de mentoría (de 3 a 6 mentores por sprint), pero no hay evidencia de que algún Junior haya sido realmente mentoreado.
+
+El trabajo tardío aumenta con el tiempo en todos los niveles. En Titanium se explica por sprints más cortos (de 11 a 13 días a 6 días en 2016, con el trabajo tardío pasando de 6–8% a 46–51%). En Mule subió de 19% (2014) a 59% (2018) y estos datos no lo explican.
+
+**Recomendaciones**
+
+- Registrar fechas planeadas e hitos en la herramienta de seguimiento. Sin ellos, el SPI solo puede medir el ritmo contra una línea constante, y un aumento del alcance de 35% a 49% dentro de los sprints no se puede separar de una entrega lenta. Los hitos crean puntos de control para revisar el CPI y el SPI antes de que las desviaciones se vuelvan crónicas.
+- Tratar la dependencia de una o dos personas como un riesgo que hay que gestionar. Appcelerator y Titanium necesitaron solo cinco personas para el 80% de las horas, y en Appcelerator una persona resolvió hasta el 90% de los issues en un año. Planear capacitación cruzada y revisar el bus factor cada año.
+- Vigilar el retrabajo por proyecto, no por nivel. El retrabajo difirió mucho más entre proyectos (25.5%, 9.8%, 5.7%) que entre niveles, así que los controles de calidad para el backlog de Appcelerator, con muchos bugs (58%), deberían ser el primer lugar donde mirar.
+- Registrar los cambios de proceso junto al desempeño. Un cambio como sprints más cortos puede parecer una caída de desempeño. Hay que dejarlo documentado para leer los retrasos y el rendimiento en contexto.
+- Registrar quién revisa y con quién colabora cada persona, y el contexto de proyecto de cada issue. Son los datos necesarios para probar la mentoría y los cuellos de botella de revisión de forma directa, en lugar de usar aproximaciones.
+
+### Visualizaciones
+
+Cómo evolucionaron sprint por sprint la eficiencia de costo (CPI en USD y en horas) y el ritmo del calendario (SPI) de cada proyecto, para que el lector vea la trayectoria y no solo el valor final.
+![CPISPIRA.png](/MicheleQuere.github.io/assets/CPISPIRA.png)
+
+Cómo se reparten las horas de esfuerzo de cada proyecto por tipo de issue, para mostrar cuánta capacidad se fue en trabajo reactivo de bugs.
+![HoursTaskRA.png](/MicheleQuere.github.io/assets/HoursTaskRA.png)
+
+Issues resueltos por sprint a lo largo del tiempo, sombreados según la proporción de Seniors, para mostrar la mezcla de equipo y el periodo de actividad de cada proyecto.
+![SeniorityShareRA.png](/MicheleQuere.github.io/assets/SeniorityShareRA.png)
+
+Prueba si una mayor proporción de Seniors se asocia con más puntos por persona, usando una curva ajustada y su rango para cada proyecto.
+![SeniorityHelpsRA.png](/MicheleQuere.github.io/assets/SeniorityHelpsRA.png)
+
+Cuántas personas se necesitaron para cubrir el 80% del trabajo cada año, como medida de la dependencia de pocas personas.
+![PctFor80RA.png](/MicheleQuere.github.io/assets/PctFor80RA.png)
+
+---
+
 ## Análisis de Desempeño Operativo en el proyecto Lsstcorp Data Management
 
 Tomamos el dataset **tawos_test_clean.csv** descargable aquí : [https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download](https://www.kaggle.com/datasets/rachetkhanal/tawos-csv-clean?resource=download) para escojer uno de los proyectos documentados y hacer un análisis de rendimiento del proyecto elegido: Lsstcorp Data Management de 2014 a 2020. La tabla final contiene registros de Jira de dicho proyecto.
