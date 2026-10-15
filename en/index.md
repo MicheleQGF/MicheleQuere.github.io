@@ -32,11 +32,11 @@ Python | Pandas | SciPy | Simpful (fuzzy logic) | MySQL in Docker | SQLAlchemy |
 
 ### Key Questions
 
-    Which of the three projects performed best, and on which measures?
-    Does a higher Senior share raise output linearly, or does composition matter more?
-    When did each project cross its budget, and how did its pace change?
-    How concentrated is the effort in a few people, and how fragile is that?
-    Is there a Senior review bottleneck, and why does work finish late?
+- Which of the three projects performed best, and on which measures?
+- Does a higher Senior share raise output linearly, or does composition matter more?
+- When did each project cross its budget, and how did its pace change?
+- How concentrated is the effort in a few people, and how fragile is that?
+- Is there a Senior review bottleneck, and why does work finish late?
 
 ### Methodology
 
